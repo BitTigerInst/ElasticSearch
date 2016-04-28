@@ -180,7 +180,7 @@ var initGlobalConfig = function () {
 
   // read package.json for BTSearcher project information
   var pkg = require(path.resolve('./package.json'));
-  config.meanjs = pkg;
+  config.elasticsearch = pkg;
 
   // Extend the config object with the local-NODE_ENV.js custom/local environment. This will override any settings present in the local configuration.
   config = _.merge(config, (fs.existsSync(path.join(process.cwd(), 'config/env/local-' + process.env.NODE_ENV + '.js')) && require(path.join(process.cwd(), 'config/env/local-' + process.env.NODE_ENV + '.js'))) || {});

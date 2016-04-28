@@ -88,10 +88,10 @@ module.exports.initMiddleware = function (app) {
  */
 module.exports.initViewEngine = function (app) {
   // Set swig as the template engine
-  app.engine('jsx', consolidate[config.templateEngine]);
+  app.engine('server.view.html', consolidate[config.templateEngine]);
 
   // Set views path and view engine
-  app.set('view engine', 'jsx');
+  app.set('view engine', 'server.view.html');
   app.set('views', './');
   // app.set('views', path.join(__dirname, '../../modules/core/client/views'));
   app.set('view cache', false);
@@ -141,7 +141,7 @@ module.exports.initModulesClientRoutes = function (app) {
 /**
  * Configure Express session
  */
-module.exports.initSession = function (app, db) {
+module.exports.initSession = function (app) {
   // Express MongoDB session storage
   app.use(session({
     saveUninitialized: true,
@@ -152,11 +152,11 @@ module.exports.initSession = function (app, db) {
       httpOnly: config.sessionCookie.httpOnly,
       secure: config.sessionCookie.secure && config.secure.ssl
     },
-    key: config.sessionKey,
-    store: new MongoStore({
-      mongooseConnection: db.connection,
-      collection: config.sessionCollection
-    })
+    key: config.sessionKey
+    // store: new MongoStore({
+    //   mongooseConnection: db.connection,
+    //   collection: config.sessionCollection
+    // })
   }));
 };
 
@@ -205,7 +205,6 @@ module.exports.initErrorRoutes = function (app) {
 module.exports.configureSocketIO = function (app, db) {
   // Load the Socket.io configuration
   var server = require('./socket.io')(app, db);
-
   // Return server object
   return server;
 };
@@ -213,7 +212,7 @@ module.exports.configureSocketIO = function (app, db) {
 /**
  * Initialize the Express application
  */
-module.exports.init = function (db) {
+module.exports.init = function () {
   // Initialize express app
   var app = express();
 
@@ -233,7 +232,8 @@ module.exports.init = function (db) {
   this.initModulesClientRoutes(app);
 
   // Initialize Express session
-  this.initSession(app, db);
+  // this.initSession(app, db);
+  this.initSession(app);
 
   // Initialize Modules configuration
   this.initModulesConfiguration(app);
@@ -248,7 +248,6 @@ module.exports.init = function (db) {
   this.initErrorRoutes(app);
 
   // Configure Socket.io
-  app = this.configureSocketIO(app, db);
-
+  // app = this.configureSocketIO(app, db);
   return app;
 };
