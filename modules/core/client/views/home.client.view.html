@@ -1,0 +1,17 @@
+<section ng-controller="HomeController">
+  <div class="text-vertical-center">
+    <form class="form-inline" data-ng-submit="getCrawledData()" novalidate>
+      <input type="text" class="form-control" size="50" placeholder="微软" required>
+      <button class="btn btn-default" ng-click="getCrawledData()">Explore</button>
+    </form>
+    <div data-ng-show="error" class="text-danger">
+      <strong data-ng-bind="error"></strong>
+    </div>
+  </div>
+  <br />
+  <div data-ng-show="success" class="col-md-12" ng-init="">
+    <a data-ng-repeat="link in crawledLinks" class="list-group-item"> 
+        <span>{{ link }}</span>
+    </a>
+  </div>
+</section>

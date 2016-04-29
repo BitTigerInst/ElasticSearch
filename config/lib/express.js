@@ -33,6 +33,7 @@ module.exports.initLocalVariables = function (app) {
   }
   app.locals.keywords = config.app.keywords;
   app.locals.jsFiles = config.files.client.js;
+  app.locals.babelJsFiles = config.files.client.babelJs;
   app.locals.cssFiles = config.files.client.css;
   app.locals.livereload = config.livereload;
   app.locals.logo = config.logo;
@@ -89,6 +90,7 @@ module.exports.initMiddleware = function (app) {
 module.exports.initViewEngine = function (app) {
   // Set swig as the template engine
   app.engine('server.view.html', consolidate[config.templateEngine]);
+  // app.engine('server.view.html', require('express-react-views').createEngine('babel'));
 
   // Set views path and view engine
   app.set('view engine', 'server.view.html');

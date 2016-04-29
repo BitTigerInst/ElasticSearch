@@ -142,6 +142,9 @@ var initGlobalConfigFiles = function (config, assets) {
   // Setting Globbed policies files
   config.files.server.policies = getGlobbedPaths(assets.server.policies);
 
+  // Setting Globbed babelJs files
+  config.files.client.babelJs = getGlobbedPaths(assets.client.babelJs);
+
   // Setting Globbed js files
   config.files.client.js = getGlobbedPaths(assets.client.lib.js, 'public/').concat(getGlobbedPaths(assets.client.js, ['public/']));
 
@@ -167,7 +170,7 @@ var initGlobalConfig = function () {
   var environmentAssets = require(path.join(process.cwd(), 'config/assets/', process.env.NODE_ENV)) || {};
 
   // Get the default assets
-  var assets = require(path.join(process.cwd(), 'config/assets/default'));
+  var assets = _.merge(defaultAssets, environmentAssets);
 
   // Get the default config
   var defaultConfig = require(path.join(process.cwd(), 'config/env/default'));

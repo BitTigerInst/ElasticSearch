@@ -16,7 +16,9 @@ module.exports = {
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
-        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
+        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/react/react.js',
+        'public/lib/react/react-dom.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
@@ -33,7 +35,10 @@ module.exports = {
       'modules/core/client/app/config.js',
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
-      'modules/*/client/**/*.js'
+      'modules/*/client/**/(*.js|(!*.babel.js))'
+    ],
+    babelJs: [
+      'modules/*/client/components/*.babel.js'
     ],
     img: [
       'modules/**/*/img/**/*.jpg',
