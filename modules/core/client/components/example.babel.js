@@ -1,3 +1,6 @@
+'use strict';
+
+
 var TimerExample = React.createClass({
 
     getInitialState: function(){

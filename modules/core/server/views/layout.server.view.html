@@ -18,18 +18,15 @@
 
 <body class="full">
 <!--  
-   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header> 
-  <section class="content">
-    <section class="container">
-      {% block content %}{% endblock %}
-    </section>
-  </section> -->
+   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header> -->
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
   <div>
     <h1>Home</h1>
   </div>
-  <div id="content" class="content"></div>
+<!--   <div id="content" class="content"></div> -->
+  {% include "../../../search/client/views/search.client.view.html" %}
 
 
   <!--Embedding The User Object-->
@@ -37,16 +34,10 @@
     var user = {{ user | json | safe }};
   </script>
 
-  <!--Load The Socket.io File-->
-<!--   <script type="text/javascript" src="/socket.io/socket.io.js"></script> -->
-
   <!--Application JavaScript Files-->
   {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
   {% for babelJsFile in babelJsFiles %}<script type="text/babel" src="{{babelJsFile}}"></script>{% endfor %}
-   {% if livereload %}
-  <!--Livereload script rendered -->
-  <!-- <script type="text/javascript" src="{{host}}:35729/livereload.js"></script> -->
-  {% endif %} 
+
 </body>
 
 </html>
