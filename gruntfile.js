@@ -192,7 +192,4 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['lint', 'mkdir:upload', 'concurrent:default']);
 
 
-  // Default task(s).
-  // grunt.registerTask('default', ['jshint', 'watch', 'uglify']);
-
 };

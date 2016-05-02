@@ -9,7 +9,6 @@ var config = require('../config'),
   logger = require('./logger'),
   bodyParser = require('body-parser'),
   session = require('express-session'),
-  MongoStore = require('connect-mongo')(session),
   favicon = require('serve-favicon'),
   compress = require('compression'),
   methodOverride = require('method-override'),
@@ -120,9 +119,9 @@ module.exports.initHelmetHeaders = function (app) {
 /**
  * Invoke modules server configuration
  */
-module.exports.initModulesConfiguration = function (app, db) {
+module.exports.initModulesConfiguration = function (app) {
   config.files.server.configs.forEach(function (configPath) {
-    require(path.resolve(configPath))(app, db);
+    require(path.resolve(configPath))(app);
   });
 };
 
@@ -144,7 +143,6 @@ module.exports.initModulesClientRoutes = function (app) {
  * Configure Express session
  */
 module.exports.initSession = function (app) {
-  // Express MongoDB session storage
   app.use(session({
     saveUninitialized: true,
     resave: true,
@@ -155,10 +153,6 @@ module.exports.initSession = function (app) {
       secure: config.sessionCookie.secure && config.secure.ssl
     },
     key: config.sessionKey
-    // store: new MongoStore({
-    //   mongooseConnection: db.connection,
-    //   collection: config.sessionCollection
-    // })
   }));
 };
 
@@ -202,16 +196,6 @@ module.exports.initErrorRoutes = function (app) {
 };
 
 /**
- * Configure Socket.io
- */
-module.exports.configureSocketIO = function (app, db) {
-  // Load the Socket.io configuration
-  var server = require('./socket.io')(app, db);
-  // Return server object
-  return server;
-};
-
-/**
  * Initialize the Express application
  */
 module.exports.init = function () {
@@ -234,7 +218,6 @@ module.exports.init = function () {
   this.initModulesClientRoutes(app);
 
   // Initialize Express session
-  // this.initSession(app, db);
   this.initSession(app);
 
   // Initialize Modules configuration
@@ -249,7 +232,5 @@ module.exports.init = function () {
   // Initialize error routes
   this.initErrorRoutes(app);
 
-  // Configure Socket.io
-  // app = this.configureSocketIO(app, db);
   return app;
 };

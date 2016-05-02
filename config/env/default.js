@@ -5,7 +5,7 @@ module.exports = {
     title: 'Elasticsearch Engine',
     team: 'BTSearcher',
     description: 'Use the Twitter API and ElasticSearch to create a Twitter search feature based on geolocation. The implementation will be able to stream Tweets real-time from Twitter and index/store those tweets into ElasticSearch. The web application will have a good interface for users to enter search information. Finally, this app will be deployed on a cloud-platform.',
-    keywords: 'mongodb, express, react, node.js, mongoose, passport, elasticsearch'
+    keywords: 'express, react, node.js, passport, elasticsearch'
   },
   port: process.env.PORT || 3000,
   host: process.env.HOST || '0.0.0.0',
