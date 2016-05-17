@@ -27,9 +27,10 @@
     "new-cap": 0,                   // require a capital letter for constructors
     "space-infix-ops": 0,           // require spaces around operators
     "space-before-function-paren": 0,
+    "object-shorthand": 0,
 
     ////////// Variables //////////
-    
+
     "no-unused-vars": 0,              // disallow declaration of variables that are not used in the code
 
     ////////// ECMAScript 6 //////////
