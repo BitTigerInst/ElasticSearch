@@ -4,16 +4,36 @@
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true,
-   },
-   "ecmaFeatures": {
+    "mocha": true
+  },
+  "ecmaFeatures": {
     "jsx": true,
     "es6": true,
-    "classes": true,
-   },
-   "rules": {
-     "comma-dangle": [1, "always-multiline"],
-     "max-len": [1, 180, 4],
-     "arrow-body-style": [0],
-   },
+    "classes": true
+  },
+  "rules": {
+    "indent": [0, 2, {"SwitchCase": 1}],
+    "comma-dangle": [1, "always-multiline"],
+    "max-len": [1, 180, 4],
+    "arrow-body-style": [0],
+
+    ////////// Node.js //////////
+
+
+    ////////// Possible Errors //////////
+    "prefer-arrow-callback": 0,
+    "func-names": 0,                // require function expressions to have a name (off by default)
+    "comma-dangle": 0,         // disallow trailing commas in object literals
+    "new-cap": 0,                   // require a capital letter for constructors
+    "space-infix-ops": 0,           // require spaces around operators
+    "space-before-function-paren": 0,
+
+    ////////// Variables //////////
+    
+    "no-unused-vars": 0,              // disallow declaration of variables that are not used in the code
+
+    ////////// ECMAScript 6 //////////
+
+    "no-var": 0          // require let or const instead of var (off by default)
+  }
 }
