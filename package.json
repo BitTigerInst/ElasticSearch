@@ -20,14 +20,14 @@
     "test:server"
   ],
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hashnode/mern-starter.git"
+    "type": "github",
+    "url": "https://github.com/BitTigerInst/ElasticSearch"
   },
   "bugs": {
-    "url": "https://github.com/Hashnode/mern-starter/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Hashnode/mern-starter#readme",
-  "author": "Prashant Abhishek <prashant.abhishek7g@gmail.com>, Mayank Chandola <imayankchd@gmail.com>, Sandeep Panda <sandeep@hashnode.com>, Syed Fazle Rahman <fazle@hashnode.com>, Alkshendra Maurya <alkshendra@hashnode.com>",
+  "homepage": "",
+  "author": "BTSearcher",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.4.5",
