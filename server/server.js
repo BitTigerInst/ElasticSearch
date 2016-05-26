@@ -29,7 +29,7 @@ import { match, RouterContext } from 'react-router';
 import routes from '../shared/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
-import tweets from './routes/twitter';
+import tweets from './routes/twitter.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
