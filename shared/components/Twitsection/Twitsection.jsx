@@ -44,7 +44,9 @@ class Twitsection extends Component {
     $.get(url).done(function(data) {
       console.log(data);
       this.setState({tweets:data});
-    }.bind(this));
+    }.bind(this)).fail(function() {
+      alert('Error occured!');
+    });
   }
 
     // $.ajax({
