@@ -50,7 +50,7 @@ export function testConn(req, res) {
 }
 
 export function searchByArea(req, res) {
-	let area = req.params.area;
+	const area = req.params.area;
   Elastic.searchByArea(area).then((result) => {
     if (result) {
 			res.json(result);
