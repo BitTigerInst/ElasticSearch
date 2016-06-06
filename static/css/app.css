@@ -214,6 +214,11 @@ body {
 	font-weight: 700;
 }
 
+#map{
+	width: 80%;
+	height: 300px;
+}
+
 @media (max-width: 767px){
 	.add-post-button{
 		float: left;
