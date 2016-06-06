@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import fetch from 'isomorphic-fetch';
-import createFragment from 'react-addons-create-fragment';
 
 class Twitsection extends Component {
   constructor(props, context) {
@@ -44,7 +43,9 @@ class Twitsection extends Component {
     $.get(url).done(function(data) {
       console.log(data);
       this.setState({tweets:data});
-    }.bind(this));
+    }.bind(this)).fail(function() {
+      alert('Error occured!');
+    });
   }
 
     // $.ajax({
