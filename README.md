@@ -1,5 +1,5 @@
 # TwitterMap
-### A web application based on MERN Stack(MongoDB replaced by `ElasticSearch`, `Express`, `Nodejs`, `Reactjs`), Twitter Streaming API to realize hot twittes searching and visualization.
+### A web application based on MERN Stack(MongoDB replaced by `ElasticSearch`, `Express`, `Nodejs`, `Reactjs`), Twitter Streaming API to realize hot tweets searching and visualization.
 
 ---
 

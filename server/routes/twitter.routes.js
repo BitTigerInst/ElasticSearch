@@ -14,4 +14,10 @@ router.route('/test_conn').get(TwitterController.testConn);
 // Search twittes by area
 router.route('/searchByArea/:area').get(TwitterController.searchByArea);
 
+// Search twittes by hashtag
+router.route('/searchByHashtag/:hashtag').get(TwitterController.searchByHashtag);
+
+
+
+
 export default router;
