@@ -60,4 +60,18 @@ export function searchByArea(req, res) {
   });
 }
 
+
+export function searchByHashtag(req,res) {
+  let hashtag = req.params.hashtag;
+  Elastic.searchByHashtag(hashtag).then((result) => {
+    if (result) {
+			res.json(result);
+		} else {
+      res.json('search query failed!');
+    }
+  });
+}
+
+
+
 export default router;
