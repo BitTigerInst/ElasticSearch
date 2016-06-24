@@ -220,7 +220,7 @@ button{
 }
 
 #map{
-	width: 80%;
+	width: 100%;
 	height: 300px;
 }
 
@@ -293,6 +293,47 @@ button{
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+/*css for TweetsList*/
+
+.user-info{
+	padding: 14px;
+	overflow: auto;
+}
+
+.tweet-avatar{
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	float: left;
+}
+
+.tweet-id{
+	float: left;
+	padding: 20px;
+}
+
+.tweet-time{
+	padding-right: 10px;
+	text-align: right;
+}
+
+.tweets-text{
+	font-size: 1.1em;
+	padding: 30px;
+}
+
+.tweet-wrapper{
+	display: inline-block;
+	width: 33.3%;
+}
+
+.tweet-showbox{
+	margin: 20px;
+	border: 1px #b5deff solid;
+	border-radius: 1px;
 }
 
 @media (max-width: 767px){
