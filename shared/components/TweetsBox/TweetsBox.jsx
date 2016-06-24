@@ -10,16 +10,17 @@ const TweetsBox = ({tweet}) => {
           <div className = "tweet-avatar" >
             <img src={tweet.img} ></img>
           </div>
-
-          <div className = "tweet-id" >
-            {tweet.name}
+          <div className="tweet-info">
+            <div className = "tweet-id" >
+              {tweet.name}
+            </div>
+            <div className = "tweet-time" >
+              {tweet.time}
+            </div>
           </div>
 
         </div>
 
-        <div className = "tweet-time" >
-          {tweet.time}
-        </div>
 
         <div className = "tweets-text" >
           {tweet.content}
