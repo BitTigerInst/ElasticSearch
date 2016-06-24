@@ -7,7 +7,7 @@ const config = {
 	access_token: '3330431387-iFa2TNFhZVpbGy0DdftL4xulrYKbOMAlpkdAHLv',
 	access_token_secret: 'HjoNbWGaI41LjhjvAFtiYZfjkP8vE0R7h7iN9sAfNHyoU',
   // elasticsearch config
-  indexName: 'twitter_dev',
+  indexName: 'logstash_twitter_dev',
   host: 'http://13.92.81.137:9200',
   log: 'info'
 };

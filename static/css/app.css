@@ -30,6 +30,11 @@ body {
 	font-size: 16px;
 }
 
+button{
+	background: none;
+	border: 1px solid black;
+}
+
 .subtitle {
 	margin-top: 0;
 	margin-left: 0;
@@ -212,6 +217,82 @@ body {
 	color: #FFF;
 	text-decoration: none;
 	font-weight: 700;
+}
+
+#map{
+	width: 80%;
+	height: 300px;
+}
+
+.SearchWrapper{
+	height: 450px;
+	position: relative;
+}
+
+.SearchWidget{
+	width: 42%;
+	margin: 0 auto;
+	top: 50%;
+	position: relative;
+}
+
+.tweet-form-fields{
+	height: 40px;
+}
+
+.tweet-form-fields input{
+	height: 100%;
+	border: none;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    padding: 20px;
+    margin:0 5px;
+    color:white;
+}
+
+.tweet-form-fields ::-webkit-input-placeholder{ /* WebKit, Blink, Edge */
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.tweet-form-fields :-moz-placeholder{ /* WebKit, Blink, Edge */
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.tweet-form-fields :-ms-input-placeholder{ /* WebKit, Blink, Edge */
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.tweet-form-fields ::-moz-placeholder{ /* WebKit, Blink, Edge */
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.tweet-form-fields input,
+.tweet-form-fields input::-webkit-input-placeholder {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+.tweet-form-fields button{
+	vertical-align: super;
+	height: 100%;
+	width: 80px;
+    font-size: 15px;
+    background: #b34365;
+    border: none;
+    color: white;
+}
+
+.tweet-form-action{
+	display: inline-block;
+	height: 100%;
+}
+
+.bgwrapper, .bgwrapper img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 @media (max-width: 767px){

@@ -27,7 +27,8 @@ exports.testConnection = testConnection;
 function searchByArea(area) {
   return elasticClient.search({
     index: config.indexName,
-    q: `place.name: ${area}`
+    q: `place.name: ${area}`,
+    size: 30
   });
 }
 
