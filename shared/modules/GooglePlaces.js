@@ -7,7 +7,7 @@
     var infowindow;
     var map = new google.maps.Map(document.getElementById('map'), {
       center: initSite,
-      zoom: 5
+      zoom: 13
     });
 
   //add the InfoWindow to map
@@ -32,5 +32,3 @@
       }
     }
 }
-
-

@@ -64,7 +64,7 @@ class Twitsection extends Component {
             lng:lng
           }
         })
-        initMap(cleanData); 
+        initMap(cleanData);
         this.setState({tweets:data});
         console.log(this.state.tweets);
         this.props.renderTweetsData(data);
@@ -74,7 +74,7 @@ class Twitsection extends Component {
     }
 
     test(data) {
-      this.setState({tweets:data}); 
+      this.setState({tweets:data});
       console.log(this.state.tweets);
     }
 
@@ -100,7 +100,7 @@ class Twitsection extends Component {
         <div className="container">
           <div id="map"></div>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChfs6OCo55LNZVJlrncEkg6evXBTi_3g8&signed_in=true&libraries=places" async defer></script>
-          <TweetsList tweets = {this.state.tweets} /> 
+          <TweetsList tweets = {this.state.tweets} />
         </div>
         <Footer />
       </div>
