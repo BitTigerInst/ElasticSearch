@@ -99,7 +99,7 @@ app.use((req, res, next) => {
       return next();
     }
 
-    const initialState = { posts: [], post: {} };
+    const initialState = { tweets: [], tweet: {} };
 
     const store = configureStore(initialState);
 
