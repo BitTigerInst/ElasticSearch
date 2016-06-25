@@ -12,7 +12,7 @@ router.route('/search/:query/:geolocalization/:count/:resultType/').get(TwitterC
 router.route('/test_conn').get(TwitterController.testConn);
 
 // Search twittes by area
-router.route('/searchByArea/:area').get(TwitterController.searchByArea);
+router.route('/searchByAreaHashtag/:area/:hashtag').get(TwitterController.searchByAreaHashtag);
 
 // Search twittes by hashtag
 router.route('/searchByHashtag/:hashtag').get(TwitterController.searchByHashtag);

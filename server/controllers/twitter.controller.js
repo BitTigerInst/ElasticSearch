@@ -49,9 +49,10 @@ export function testConn(req, res) {
   });
 }
 
-export function searchByArea(req, res) {
-	const area = req.params.area;
-  Elastic.searchByArea(area).then((result) => {
+export function searchByAreaHashtag(req, res) {
+	let area = req.params.area;
+  let hashtag = req.params.hashtag; 
+  Elastic.searchByAreaHashtag(area, hashtag).then((result) => {
     if (result) {
 			res.json(result);
 		} else {
@@ -67,6 +68,19 @@ export function searchByHashtag(req,res) {
     if (result) {
 			res.json(result);
 		} else {
+      res.json('search query failed!');
+    }
+  });
+}
+
+export function searchByHashtagCityCount(req,res) {
+  let hashtag = req.params.hashtag;
+  let location = req.params.location;
+  let count = req.params.count;
+  Elastic.searchByHashtag(hashtag, location, count).then((result) => {
+    if (result) {
+      res.json(result);
+    } else {
       res.json('search query failed!');
     }
   });

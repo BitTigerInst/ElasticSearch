@@ -1,13 +1,13 @@
  export function initMap(dataset) {
   //initial Site
 
-    var initSite = dataset[0];
+    var initSite = dataset[0].googlePlace;
 
   //initialize the google map
     var infowindow;
     var map = new google.maps.Map(document.getElementById('map'), {
       center: initSite,
-      zoom: 13
+      zoom: 7
     });
 
   //add the InfoWindow to map
@@ -19,7 +19,7 @@
       for( var i = 0; i < dataset.length; i++){
         var marker = new google.maps.Marker({
           map: map,
-          position: dataset[i]
+          position: dataset[i].googlePlace
         });
 
         //Service that add content to infowindow

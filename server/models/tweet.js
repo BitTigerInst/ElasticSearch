@@ -36,7 +36,7 @@ function searchByAreaWithinTimeRange(area,time_range) {
           "must": [
             {
               "match": {
-                "place.name": area
+                "place.name": area,
               }
             },
             {
@@ -58,23 +58,35 @@ function searchByAreaWithinTimeRange(area,time_range) {
 * search twittes by area
 **/
 
-function searchByArea(area) {
+function searchByAreaHashtag(area, hashtag) {
   return elasticClient.search({
     index: config.indexName,
     // q: `place.name: ${area}`
     body:
-    {
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "match": {
-                "place.name": area
-              }
-            }
-          ]
-        }
-      }
+     {
+       "from": 0,
+       "size": 30,
+       "query": {
+          "bool": {
+             "must": [
+                {
+                   "match": {
+                      "place.name": area
+                   }
+                },
+                {
+                   "match": {
+                      "entities.hashtags": hashtag
+                   }
+                }
+             ],
+             "filter": {
+                "exists": {
+                   "field": "coordinates"
+                }
+             }
+          }
+       }
     }
   });
 }
@@ -133,7 +145,7 @@ function searchByHashtagWithFuzziness(hashtag, fuzziness) {
 }
 
 
-exports.searchByArea = searchByArea;
+exports.searchByAreaHashtag = searchByAreaHashtag;
 
 exports.searchByHashtag = searchByHashtag;
 
