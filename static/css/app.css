@@ -347,6 +347,33 @@ button{
 	border-radius: 7px;
 }
 
+.pin-header{
+overflow: auto;
+}
+
+.pin-header div{
+display: inline-block;
+float: left;
+}
+
+.pin-avatar{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background-image: url(传过来数据的img);
+background-size: cover;
+}
+
+.pin-username{
+padding: 15px;
+font-size: 16px;
+font-weight: 400;
+}
+
+.pin-content{
+padding: 25px;
+}
+
 @media (max-width: 767px){
 	.add-post-button{
 		float: left;

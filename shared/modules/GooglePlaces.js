@@ -15,20 +15,41 @@
 
     SitePin();
     function SitePin(){
-      console.log(dataset);
-      for( var i = 0; i < dataset.length; i++){
+      var data = dataset;
+      for( var i = 0; i < data.length; i++){
         var marker = new google.maps.Marker({
           map: map,
-          position: dataset[i].googlePlace
+          position: data[i].googlePlace
         });
-
-        //Service that add content to infowindow
-        google.maps.event.addListener(marker, 'click', function() {
-          var cool = 'nigger!';
-        //infowindow.setContent(place.geometry);
-          infowindow.setContent('<div>test</div>');
-          infowindow.open(map, this);
-        });
+        test(data[i]);
       }
+        function test(dataset) {
+          google.maps.event.addListener(marker, 'click', function() {
+                  var content = '<div class="">' +
+                    '<div class="pin-header">' +
+                    '<div class="pin-avatar"><img src="'+ dataset.img +'" /></div>' +
+                    '<div class="pin-username">"'+ dataset.name +'"</div>' +
+                    '</div>'+
+                    '<div class="pin-content">"'+ dataset.content +'"</div>' +
+                    '</div>';
+                  infowindow.setContent(content);
+                  infowindow.open(map, this);
+          });
+        }
     }
 }
+
+      function attachData(marker, dataset) {
+        var infowindow = new google.maps.InfoWindow({
+          content: '<div class="">' +
+                  '<div class="pin-header">' +
+                  '<div class="pin-avatar"><img src="'+ dataset.img +'"</div>' +
+                  '<div class="pin-username">"'+ dataset.name +'"</div>' +
+                  '</div>'+
+                  '<div class="pin-content">"'+ dataset.content +'"</div>' +
+                  '</div>'
+        });
+        marker.addListener(marker, 'click', function() {
+                infowindow.open(map, this);
+        });
+    }
