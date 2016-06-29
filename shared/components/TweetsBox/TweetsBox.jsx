@@ -6,7 +6,8 @@ const TweetsBox = ({tweet}) => {
     return (
       <div className = "tweet-wrapper">
       <div className = "tweet-showbox" >
-        <div className = "user-info" >
+        <div className = "user-info">
+
           <div className = "tweet-avatar" >
             <img src={tweet.img} ></img>
           </div>
